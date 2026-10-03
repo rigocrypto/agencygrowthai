@@ -1,0 +1,642 @@
+{
+    "kind":  "hasura-table-metadata-fragment",
+    "version":  3,
+    "source":  "default",
+    "note":  "Merge these table entries into the existing default source; do not replace Nhost internal metadata.",
+    "tables":  [
+                   {
+                       "table":  {
+                                     "name":  "agencies",
+                                     "schema":  "public"
+                                 },
+                       "array_relationships":  [
+                                                   {
+                                                       "name":  "agents_by_agency_id",
+                                                       "using":  {
+                                                                     "foreign_key_constraint_on":  {
+                                                                                                       "column":  "agency_id",
+                                                                                                       "table":  {
+                                                                                                                     "name":  "agents",
+                                                                                                                     "schema":  "public"
+                                                                                                                 }
+                                                                                                   }
+                                                                 }
+                                                   },
+                                                   {
+                                                       "name":  "ai_interactions_by_agency_id",
+                                                       "using":  {
+                                                                     "foreign_key_constraint_on":  {
+                                                                                                       "column":  "agency_id",
+                                                                                                       "table":  {
+                                                                                                                     "name":  "ai_interactions",
+                                                                                                                     "schema":  "public"
+                                                                                                                 }
+                                                                                                   }
+                                                                 }
+                                                   },
+                                                   {
+                                                       "name":  "appointments_by_agency_id",
+                                                       "using":  {
+                                                                     "foreign_key_constraint_on":  {
+                                                                                                       "column":  "agency_id",
+                                                                                                       "table":  {
+                                                                                                                     "name":  "appointments",
+                                                                                                                     "schema":  "public"
+                                                                                                                 }
+                                                                                                   }
+                                                                 }
+                                                   },
+                                                   {
+                                                       "name":  "audit_logs_by_agency_id",
+                                                       "using":  {
+                                                                     "foreign_key_constraint_on":  {
+                                                                                                       "column":  "agency_id",
+                                                                                                       "table":  {
+                                                                                                                     "name":  "audit_logs",
+                                                                                                                     "schema":  "public"
+                                                                                                                 }
+                                                                                                   }
+                                                                 }
+                                                   },
+                                                   {
+                                                       "name":  "campaign_events_by_agency_id",
+                                                       "using":  {
+                                                                     "foreign_key_constraint_on":  {
+                                                                                                       "column":  "agency_id",
+                                                                                                       "table":  {
+                                                                                                                     "name":  "campaign_events",
+                                                                                                                     "schema":  "public"
+                                                                                                                 }
+                                                                                                   }
+                                                                 }
+                                                   },
+                                                   {
+                                                       "name":  "campaigns_by_agency_id",
+                                                       "using":  {
+                                                                     "foreign_key_constraint_on":  {
+                                                                                                       "column":  "agency_id",
+                                                                                                       "table":  {
+                                                                                                                     "name":  "campaigns",
+                                                                                                                     "schema":  "public"
+                                                                                                                 }
+                                                                                                   }
+                                                                 }
+                                                   },
+                                                   {
+                                                       "name":  "candidate_events_by_agency_id",
+                                                       "using":  {
+                                                                     "foreign_key_constraint_on":  {
+                                                                                                       "column":  "agency_id",
+                                                                                                       "table":  {
+                                                                                                                     "name":  "candidate_events",
+                                                                                                                     "schema":  "public"
+                                                                                                                 }
+                                                                                                   }
+                                                                 }
+                                                   },
+                                                   {
+                                                       "name":  "candidates_by_agency_id",
+                                                       "using":  {
+                                                                     "foreign_key_constraint_on":  {
+                                                                                                       "column":  "agency_id",
+                                                                                                       "table":  {
+                                                                                                                     "name":  "candidates",
+                                                                                                                     "schema":  "public"
+                                                                                                                 }
+                                                                                                   }
+                                                                 }
+                                                   },
+                                                   {
+                                                       "name":  "consents_by_agency_id",
+                                                       "using":  {
+                                                                     "foreign_key_constraint_on":  {
+                                                                                                       "column":  "agency_id",
+                                                                                                       "table":  {
+                                                                                                                     "name":  "consents",
+                                                                                                                     "schema":  "public"
+                                                                                                                 }
+                                                                                                   }
+                                                                 }
+                                                   },
+                                                   {
+                                                       "name":  "content_assets_by_agency_id",
+                                                       "using":  {
+                                                                     "foreign_key_constraint_on":  {
+                                                                                                       "column":  "agency_id",
+                                                                                                       "table":  {
+                                                                                                                     "name":  "content_assets",
+                                                                                                                     "schema":  "public"
+                                                                                                                 }
+                                                                                                   }
+                                                                 }
+                                                   },
+                                                   {
+                                                       "name":  "content_reviews_by_agency_id",
+                                                       "using":  {
+                                                                     "foreign_key_constraint_on":  {
+                                                                                                       "column":  "agency_id",
+                                                                                                       "table":  {
+                                                                                                                     "name":  "content_reviews",
+                                                                                                                     "schema":  "public"
+                                                                                                                 }
+                                                                                                   }
+                                                                 }
+                                                   },
+                                                   {
+                                                       "name":  "lead_events_by_agency_id",
+                                                       "using":  {
+                                                                     "foreign_key_constraint_on":  {
+                                                                                                       "column":  "agency_id",
+                                                                                                       "table":  {
+                                                                                                                     "name":  "lead_events",
+                                                                                                                     "schema":  "public"
+                                                                                                                 }
+                                                                                                   }
+                                                                 }
+                                                   },
+                                                   {
+                                                       "name":  "leads_by_agency_id",
+                                                       "using":  {
+                                                                     "foreign_key_constraint_on":  {
+                                                                                                       "column":  "agency_id",
+                                                                                                       "table":  {
+                                                                                                                     "name":  "leads",
+                                                                                                                     "schema":  "public"
+                                                                                                                 }
+                                                                                                   }
+                                                                 }
+                                                   },
+                                                   {
+                                                       "name":  "settings_by_agency_id",
+                                                       "using":  {
+                                                                     "foreign_key_constraint_on":  {
+                                                                                                       "column":  "agency_id",
+                                                                                                       "table":  {
+                                                                                                                     "name":  "settings",
+                                                                                                                     "schema":  "public"
+                                                                                                                 }
+                                                                                                   }
+                                                                 }
+                                                   }
+                                               ]
+                   },
+                   {
+                       "table":  {
+                                     "name":  "agents",
+                                     "schema":  "public"
+                                 },
+                       "object_relationships":  [
+                                                    {
+                                                        "name":  "agency",
+                                                        "using":  {
+                                                                      "foreign_key_constraint_on":  "agency_id"
+                                                                  }
+                                                    },
+                                                    {
+                                                        "name":  "auth_user",
+                                                        "using":  {
+                                                                      "foreign_key_constraint_on":  "user_id"
+                                                                  }
+                                                    }
+                                                ],
+                       "array_relationships":  [
+                                                   {
+                                                       "name":  "appointments_by_agent_id",
+                                                       "using":  {
+                                                                     "foreign_key_constraint_on":  {
+                                                                                                       "column":  "agent_id",
+                                                                                                       "table":  {
+                                                                                                                     "name":  "appointments",
+                                                                                                                     "schema":  "public"
+                                                                                                                 }
+                                                                                                   }
+                                                                 }
+                                                   },
+                                                   {
+                                                       "name":  "candidates_by_assigned_agent_id",
+                                                       "using":  {
+                                                                     "foreign_key_constraint_on":  {
+                                                                                                       "column":  "assigned_agent_id",
+                                                                                                       "table":  {
+                                                                                                                     "name":  "candidates",
+                                                                                                                     "schema":  "public"
+                                                                                                                 }
+                                                                                                   }
+                                                                 }
+                                                   },
+                                                   {
+                                                       "name":  "content_assets_by_created_by",
+                                                       "using":  {
+                                                                     "foreign_key_constraint_on":  {
+                                                                                                       "column":  "created_by",
+                                                                                                       "table":  {
+                                                                                                                     "name":  "content_assets",
+                                                                                                                     "schema":  "public"
+                                                                                                                 }
+                                                                                                   }
+                                                                 }
+                                                   },
+                                                   {
+                                                       "name":  "content_assets_by_reviewer",
+                                                       "using":  {
+                                                                     "foreign_key_constraint_on":  {
+                                                                                                       "column":  "reviewer",
+                                                                                                       "table":  {
+                                                                                                                     "name":  "content_assets",
+                                                                                                                     "schema":  "public"
+                                                                                                                 }
+                                                                                                   }
+                                                                 }
+                                                   },
+                                                   {
+                                                       "name":  "content_reviews_by_reviewer",
+                                                       "using":  {
+                                                                     "foreign_key_constraint_on":  {
+                                                                                                       "column":  "reviewer",
+                                                                                                       "table":  {
+                                                                                                                     "name":  "content_reviews",
+                                                                                                                     "schema":  "public"
+                                                                                                                 }
+                                                                                                   }
+                                                                 }
+                                                   },
+                                                   {
+                                                       "name":  "leads_by_assigned_agent_id",
+                                                       "using":  {
+                                                                     "foreign_key_constraint_on":  {
+                                                                                                       "column":  "assigned_agent_id",
+                                                                                                       "table":  {
+                                                                                                                     "name":  "leads",
+                                                                                                                     "schema":  "public"
+                                                                                                                 }
+                                                                                                   }
+                                                                 }
+                                                   }
+                                               ]
+                   },
+                   {
+                       "table":  {
+                                     "name":  "ai_interactions",
+                                     "schema":  "public"
+                                 },
+                       "object_relationships":  [
+                                                    {
+                                                        "name":  "agency",
+                                                        "using":  {
+                                                                      "foreign_key_constraint_on":  "agency_id"
+                                                                  }
+                                                    },
+                                                    {
+                                                        "name":  "auth_user",
+                                                        "using":  {
+                                                                      "foreign_key_constraint_on":  "user_id"
+                                                                  }
+                                                    }
+                                                ]
+                   },
+                   {
+                       "table":  {
+                                     "name":  "appointments",
+                                     "schema":  "public"
+                                 },
+                       "object_relationships":  [
+                                                    {
+                                                        "name":  "agency",
+                                                        "using":  {
+                                                                      "foreign_key_constraint_on":  "agency_id"
+                                                                  }
+                                                    },
+                                                    {
+                                                        "name":  "agent",
+                                                        "using":  {
+                                                                      "foreign_key_constraint_on":  "agent_id"
+                                                                  }
+                                                    },
+                                                    {
+                                                        "name":  "lead",
+                                                        "using":  {
+                                                                      "foreign_key_constraint_on":  "lead_id"
+                                                                  }
+                                                    }
+                                                ]
+                   },
+                   {
+                       "table":  {
+                                     "name":  "audit_logs",
+                                     "schema":  "public"
+                                 },
+                       "object_relationships":  [
+                                                    {
+                                                        "name":  "agency",
+                                                        "using":  {
+                                                                      "foreign_key_constraint_on":  "agency_id"
+                                                                  }
+                                                    },
+                                                    {
+                                                        "name":  "auth_user",
+                                                        "using":  {
+                                                                      "foreign_key_constraint_on":  "user_id"
+                                                                  }
+                                                    }
+                                                ]
+                   },
+                   {
+                       "table":  {
+                                     "name":  "campaign_events",
+                                     "schema":  "public"
+                                 },
+                       "object_relationships":  [
+                                                    {
+                                                        "name":  "agency",
+                                                        "using":  {
+                                                                      "foreign_key_constraint_on":  "agency_id"
+                                                                  }
+                                                    },
+                                                    {
+                                                        "name":  "campaign",
+                                                        "using":  {
+                                                                      "foreign_key_constraint_on":  "campaign_id"
+                                                                  }
+                                                    }
+                                                ]
+                   },
+                   {
+                       "table":  {
+                                     "name":  "campaigns",
+                                     "schema":  "public"
+                                 },
+                       "object_relationships":  [
+                                                    {
+                                                        "name":  "agency",
+                                                        "using":  {
+                                                                      "foreign_key_constraint_on":  "agency_id"
+                                                                  }
+                                                    }
+                                                ],
+                       "array_relationships":  [
+                                                   {
+                                                       "name":  "campaign_events_by_campaign_id",
+                                                       "using":  {
+                                                                     "foreign_key_constraint_on":  {
+                                                                                                       "column":  "campaign_id",
+                                                                                                       "table":  {
+                                                                                                                     "name":  "campaign_events",
+                                                                                                                     "schema":  "public"
+                                                                                                                 }
+                                                                                                   }
+                                                                 }
+                                                   },
+                                                   {
+                                                       "name":  "leads_by_campaign_id",
+                                                       "using":  {
+                                                                     "foreign_key_constraint_on":  {
+                                                                                                       "column":  "campaign_id",
+                                                                                                       "table":  {
+                                                                                                                     "name":  "leads",
+                                                                                                                     "schema":  "public"
+                                                                                                                 }
+                                                                                                   }
+                                                                 }
+                                                   }
+                                               ]
+                   },
+                   {
+                       "table":  {
+                                     "name":  "candidate_events",
+                                     "schema":  "public"
+                                 },
+                       "object_relationships":  [
+                                                    {
+                                                        "name":  "agency",
+                                                        "using":  {
+                                                                      "foreign_key_constraint_on":  "agency_id"
+                                                                  }
+                                                    },
+                                                    {
+                                                        "name":  "candidate",
+                                                        "using":  {
+                                                                      "foreign_key_constraint_on":  "candidate_id"
+                                                                  }
+                                                    }
+                                                ]
+                   },
+                   {
+                       "table":  {
+                                     "name":  "candidates",
+                                     "schema":  "public"
+                                 },
+                       "object_relationships":  [
+                                                    {
+                                                        "name":  "agency",
+                                                        "using":  {
+                                                                      "foreign_key_constraint_on":  "agency_id"
+                                                                  }
+                                                    },
+                                                    {
+                                                        "name":  "assigned_agent",
+                                                        "using":  {
+                                                                      "foreign_key_constraint_on":  "assigned_agent_id"
+                                                                  }
+                                                    }
+                                                ],
+                       "array_relationships":  [
+                                                   {
+                                                       "name":  "candidate_events_by_candidate_id",
+                                                       "using":  {
+                                                                     "foreign_key_constraint_on":  {
+                                                                                                       "column":  "candidate_id",
+                                                                                                       "table":  {
+                                                                                                                     "name":  "candidate_events",
+                                                                                                                     "schema":  "public"
+                                                                                                                 }
+                                                                                                   }
+                                                                 }
+                                                   }
+                                               ]
+                   },
+                   {
+                       "table":  {
+                                     "name":  "consents",
+                                     "schema":  "public"
+                                 },
+                       "object_relationships":  [
+                                                    {
+                                                        "name":  "agency",
+                                                        "using":  {
+                                                                      "foreign_key_constraint_on":  "agency_id"
+                                                                  }
+                                                    },
+                                                    {
+                                                        "name":  "lead",
+                                                        "using":  {
+                                                                      "foreign_key_constraint_on":  "lead_id"
+                                                                  }
+                                                    }
+                                                ]
+                   },
+                   {
+                       "table":  {
+                                     "name":  "content_assets",
+                                     "schema":  "public"
+                                 },
+                       "object_relationships":  [
+                                                    {
+                                                        "name":  "agency",
+                                                        "using":  {
+                                                                      "foreign_key_constraint_on":  "agency_id"
+                                                                  }
+                                                    },
+                                                    {
+                                                        "name":  "creator_agent",
+                                                        "using":  {
+                                                                      "foreign_key_constraint_on":  "created_by"
+                                                                  }
+                                                    },
+                                                    {
+                                                        "name":  "reviewer_agent",
+                                                        "using":  {
+                                                                      "foreign_key_constraint_on":  "reviewer"
+                                                                  }
+                                                    }
+                                                ],
+                       "array_relationships":  [
+                                                   {
+                                                       "name":  "content_reviews_by_content_asset_id",
+                                                       "using":  {
+                                                                     "foreign_key_constraint_on":  {
+                                                                                                       "column":  "content_asset_id",
+                                                                                                       "table":  {
+                                                                                                                     "name":  "content_reviews",
+                                                                                                                     "schema":  "public"
+                                                                                                                 }
+                                                                                                   }
+                                                                 }
+                                                   }
+                                               ]
+                   },
+                   {
+                       "table":  {
+                                     "name":  "content_reviews",
+                                     "schema":  "public"
+                                 },
+                       "object_relationships":  [
+                                                    {
+                                                        "name":  "agency",
+                                                        "using":  {
+                                                                      "foreign_key_constraint_on":  "agency_id"
+                                                                  }
+                                                    },
+                                                    {
+                                                        "name":  "content_asset",
+                                                        "using":  {
+                                                                      "foreign_key_constraint_on":  "content_asset_id"
+                                                                  }
+                                                    },
+                                                    {
+                                                        "name":  "reviewer_agent",
+                                                        "using":  {
+                                                                      "foreign_key_constraint_on":  "reviewer"
+                                                                  }
+                                                    }
+                                                ]
+                   },
+                   {
+                       "table":  {
+                                     "name":  "lead_events",
+                                     "schema":  "public"
+                                 },
+                       "object_relationships":  [
+                                                    {
+                                                        "name":  "agency",
+                                                        "using":  {
+                                                                      "foreign_key_constraint_on":  "agency_id"
+                                                                  }
+                                                    },
+                                                    {
+                                                        "name":  "lead",
+                                                        "using":  {
+                                                                      "foreign_key_constraint_on":  "lead_id"
+                                                                  }
+                                                    }
+                                                ]
+                   },
+                   {
+                       "table":  {
+                                     "name":  "leads",
+                                     "schema":  "public"
+                                 },
+                       "object_relationships":  [
+                                                    {
+                                                        "name":  "agency",
+                                                        "using":  {
+                                                                      "foreign_key_constraint_on":  "agency_id"
+                                                                  }
+                                                    },
+                                                    {
+                                                        "name":  "assigned_agent",
+                                                        "using":  {
+                                                                      "foreign_key_constraint_on":  "assigned_agent_id"
+                                                                  }
+                                                    },
+                                                    {
+                                                        "name":  "campaign",
+                                                        "using":  {
+                                                                      "foreign_key_constraint_on":  "campaign_id"
+                                                                  }
+                                                    }
+                                                ],
+                       "array_relationships":  [
+                                                   {
+                                                       "name":  "appointments_by_lead_id",
+                                                       "using":  {
+                                                                     "foreign_key_constraint_on":  {
+                                                                                                       "column":  "lead_id",
+                                                                                                       "table":  {
+                                                                                                                     "name":  "appointments",
+                                                                                                                     "schema":  "public"
+                                                                                                                 }
+                                                                                                   }
+                                                                 }
+                                                   },
+                                                   {
+                                                       "name":  "consents_by_lead_id",
+                                                       "using":  {
+                                                                     "foreign_key_constraint_on":  {
+                                                                                                       "column":  "lead_id",
+                                                                                                       "table":  {
+                                                                                                                     "name":  "consents",
+                                                                                                                     "schema":  "public"
+                                                                                                                 }
+                                                                                                   }
+                                                                 }
+                                                   },
+                                                   {
+                                                       "name":  "lead_events_by_lead_id",
+                                                       "using":  {
+                                                                     "foreign_key_constraint_on":  {
+                                                                                                       "column":  "lead_id",
+                                                                                                       "table":  {
+                                                                                                                     "name":  "lead_events",
+                                                                                                                     "schema":  "public"
+                                                                                                                 }
+                                                                                                   }
+                                                                 }
+                                                   }
+                                               ]
+                   },
+                   {
+                       "table":  {
+                                     "name":  "settings",
+                                     "schema":  "public"
+                                 },
+                       "object_relationships":  [
+                                                    {
+                                                        "name":  "agency",
+                                                        "using":  {
+                                                                      "foreign_key_constraint_on":  "agency_id"
+                                                                  }
+                                                    }
+                                                ]
+                   }
+               ]
+}
