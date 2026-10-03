@@ -1,0 +1,1152 @@
+{
+  "kind": "hasura-table-metadata-fragment",
+  "version": 3,
+  "source": "default",
+  "note": "Merge these reviewed AgencyGrowthAI table entries into the existing default source; do not replace Nhost internal metadata.",
+  "tables": [
+    {
+      "table": {
+        "name": "agencies",
+        "schema": "public"
+      },
+      "array_relationships": [
+        {
+          "name": "agents_by_agency_id",
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "agency_id",
+              "table": {
+                "name": "agents",
+                "schema": "public"
+              }
+            }
+          }
+        },
+        {
+          "name": "ai_interactions_by_agency_id",
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "agency_id",
+              "table": {
+                "name": "ai_interactions",
+                "schema": "public"
+              }
+            }
+          }
+        },
+        {
+          "name": "appointments_by_agency_id",
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "agency_id",
+              "table": {
+                "name": "appointments",
+                "schema": "public"
+              }
+            }
+          }
+        },
+        {
+          "name": "audit_logs_by_agency_id",
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "agency_id",
+              "table": {
+                "name": "audit_logs",
+                "schema": "public"
+              }
+            }
+          }
+        },
+        {
+          "name": "campaign_events_by_agency_id",
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "agency_id",
+              "table": {
+                "name": "campaign_events",
+                "schema": "public"
+              }
+            }
+          }
+        },
+        {
+          "name": "campaigns_by_agency_id",
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "agency_id",
+              "table": {
+                "name": "campaigns",
+                "schema": "public"
+              }
+            }
+          }
+        },
+        {
+          "name": "candidate_events_by_agency_id",
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "agency_id",
+              "table": {
+                "name": "candidate_events",
+                "schema": "public"
+              }
+            }
+          }
+        },
+        {
+          "name": "candidates_by_agency_id",
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "agency_id",
+              "table": {
+                "name": "candidates",
+                "schema": "public"
+              }
+            }
+          }
+        },
+        {
+          "name": "consents_by_agency_id",
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "agency_id",
+              "table": {
+                "name": "consents",
+                "schema": "public"
+              }
+            }
+          }
+        },
+        {
+          "name": "content_assets_by_agency_id",
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "agency_id",
+              "table": {
+                "name": "content_assets",
+                "schema": "public"
+              }
+            }
+          }
+        },
+        {
+          "name": "content_reviews_by_agency_id",
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "agency_id",
+              "table": {
+                "name": "content_reviews",
+                "schema": "public"
+              }
+            }
+          }
+        },
+        {
+          "name": "lead_events_by_agency_id",
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "agency_id",
+              "table": {
+                "name": "lead_events",
+                "schema": "public"
+              }
+            }
+          }
+        },
+        {
+          "name": "leads_by_agency_id",
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "agency_id",
+              "table": {
+                "name": "leads",
+                "schema": "public"
+              }
+            }
+          }
+        },
+        {
+          "name": "settings_by_agency_id",
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "agency_id",
+              "table": {
+                "name": "settings",
+                "schema": "public"
+              }
+            }
+          }
+        }
+      ],
+      "select_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "columns": [
+              "id",
+              "name",
+              "domain",
+              "primary_color",
+              "secondary_color",
+              "contact_email",
+              "contact_phone",
+              "default_calendar_url",
+              "compliance_disclaimer",
+              "privacy_policy_url",
+              "terms_url",
+              "career_disclaimer",
+              "financial_education_disclaimer",
+              "public_slug",
+              "created_at",
+              "updated_at"
+            ],
+            "filter": {
+              "agents_by_agency_id": {
+                "user_id": {
+                  "_eq": "X-Hasura-User-Id"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "table": {
+        "name": "agents",
+        "schema": "public"
+      },
+      "object_relationships": [
+        {
+          "name": "agency",
+          "using": {
+            "foreign_key_constraint_on": "agency_id"
+          }
+        },
+        {
+          "name": "auth_user",
+          "using": {
+            "foreign_key_constraint_on": "user_id"
+          }
+        }
+      ],
+      "array_relationships": [
+        {
+          "name": "appointments_by_agent_id",
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "agent_id",
+              "table": {
+                "name": "appointments",
+                "schema": "public"
+              }
+            }
+          }
+        },
+        {
+          "name": "candidates_by_assigned_agent_id",
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "assigned_agent_id",
+              "table": {
+                "name": "candidates",
+                "schema": "public"
+              }
+            }
+          }
+        },
+        {
+          "name": "content_assets_by_created_by",
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "created_by",
+              "table": {
+                "name": "content_assets",
+                "schema": "public"
+              }
+            }
+          }
+        },
+        {
+          "name": "content_assets_by_reviewer",
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "reviewer",
+              "table": {
+                "name": "content_assets",
+                "schema": "public"
+              }
+            }
+          }
+        },
+        {
+          "name": "content_reviews_by_reviewer",
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "reviewer",
+              "table": {
+                "name": "content_reviews",
+                "schema": "public"
+              }
+            }
+          }
+        },
+        {
+          "name": "leads_by_assigned_agent_id",
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "assigned_agent_id",
+              "table": {
+                "name": "leads",
+                "schema": "public"
+              }
+            }
+          }
+        }
+      ],
+      "select_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "columns": [
+              "id",
+              "agency_id",
+              "first_name",
+              "last_name",
+              "email",
+              "phone",
+              "role",
+              "status",
+              "license_status",
+              "bio",
+              "created_at"
+            ],
+            "filter": {
+              "agency": {
+                "agents_by_agency_id": {
+                  "user_id": {
+                    "_eq": "X-Hasura-User-Id"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "table": {
+        "name": "ai_interactions",
+        "schema": "public"
+      },
+      "object_relationships": [
+        {
+          "name": "agency",
+          "using": {
+            "foreign_key_constraint_on": "agency_id"
+          }
+        },
+        {
+          "name": "auth_user",
+          "using": {
+            "foreign_key_constraint_on": "user_id"
+          }
+        }
+      ],
+      "select_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "columns": [
+              "id",
+              "agency_id",
+              "interaction_type",
+              "input",
+              "output",
+              "created_at"
+            ],
+            "filter": {
+              "agency": {
+                "agents_by_agency_id": {
+                  "user_id": {
+                    "_eq": "X-Hasura-User-Id"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "table": {
+        "name": "appointments",
+        "schema": "public"
+      },
+      "object_relationships": [
+        {
+          "name": "agency",
+          "using": {
+            "foreign_key_constraint_on": "agency_id"
+          }
+        },
+        {
+          "name": "agent",
+          "using": {
+            "foreign_key_constraint_on": "agent_id"
+          }
+        },
+        {
+          "name": "lead",
+          "using": {
+            "foreign_key_constraint_on": "lead_id"
+          }
+        }
+      ],
+      "select_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "columns": [
+              "id",
+              "agency_id",
+              "lead_id",
+              "agent_id",
+              "date",
+              "time",
+              "meeting_type",
+              "status",
+              "notes",
+              "created_at",
+              "updated_at"
+            ],
+            "filter": {
+              "agency": {
+                "agents_by_agency_id": {
+                  "user_id": {
+                    "_eq": "X-Hasura-User-Id"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "update_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "columns": [
+              "status",
+              "notes"
+            ],
+            "filter": {
+              "agency": {
+                "agents_by_agency_id": {
+                  "user_id": {
+                    "_eq": "X-Hasura-User-Id"
+                  }
+                }
+              }
+            },
+            "check": {
+              "agency": {
+                "agents_by_agency_id": {
+                  "user_id": {
+                    "_eq": "X-Hasura-User-Id"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "table": {
+        "name": "audit_logs",
+        "schema": "public"
+      },
+      "object_relationships": [
+        {
+          "name": "agency",
+          "using": {
+            "foreign_key_constraint_on": "agency_id"
+          }
+        },
+        {
+          "name": "auth_user",
+          "using": {
+            "foreign_key_constraint_on": "user_id"
+          }
+        }
+      ],
+      "select_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "columns": [
+              "id",
+              "agency_id",
+              "action",
+              "entity_type",
+              "entity_id",
+              "metadata",
+              "created_at"
+            ],
+            "filter": {
+              "agency": {
+                "agents_by_agency_id": {
+                  "user_id": {
+                    "_eq": "X-Hasura-User-Id"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "table": {
+        "name": "campaign_events",
+        "schema": "public"
+      },
+      "object_relationships": [
+        {
+          "name": "agency",
+          "using": {
+            "foreign_key_constraint_on": "agency_id"
+          }
+        },
+        {
+          "name": "campaign",
+          "using": {
+            "foreign_key_constraint_on": "campaign_id"
+          }
+        }
+      ],
+      "select_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "columns": [
+              "id",
+              "campaign_id",
+              "agency_id",
+              "event_type",
+              "description",
+              "metadata",
+              "created_at"
+            ],
+            "filter": {
+              "agency": {
+                "agents_by_agency_id": {
+                  "user_id": {
+                    "_eq": "X-Hasura-User-Id"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "table": {
+        "name": "campaigns",
+        "schema": "public"
+      },
+      "object_relationships": [
+        {
+          "name": "agency",
+          "using": {
+            "foreign_key_constraint_on": "agency_id"
+          }
+        }
+      ],
+      "array_relationships": [
+        {
+          "name": "campaign_events_by_campaign_id",
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "campaign_id",
+              "table": {
+                "name": "campaign_events",
+                "schema": "public"
+              }
+            }
+          }
+        },
+        {
+          "name": "leads_by_campaign_id",
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "campaign_id",
+              "table": {
+                "name": "leads",
+                "schema": "public"
+              }
+            }
+          }
+        }
+      ],
+      "select_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "columns": [
+              "id",
+              "agency_id",
+              "name",
+              "platform",
+              "campaign_type",
+              "landing_page",
+              "utm_source",
+              "utm_medium",
+              "utm_campaign",
+              "budget",
+              "status",
+              "created_at"
+            ],
+            "filter": {
+              "agency": {
+                "agents_by_agency_id": {
+                  "user_id": {
+                    "_eq": "X-Hasura-User-Id"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "table": {
+        "name": "candidate_events",
+        "schema": "public"
+      },
+      "object_relationships": [
+        {
+          "name": "agency",
+          "using": {
+            "foreign_key_constraint_on": "agency_id"
+          }
+        },
+        {
+          "name": "candidate",
+          "using": {
+            "foreign_key_constraint_on": "candidate_id"
+          }
+        }
+      ],
+      "select_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "columns": [
+              "id",
+              "candidate_id",
+              "agency_id",
+              "event_type",
+              "description",
+              "created_at"
+            ],
+            "filter": {
+              "agency": {
+                "agents_by_agency_id": {
+                  "user_id": {
+                    "_eq": "X-Hasura-User-Id"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "table": {
+        "name": "candidates",
+        "schema": "public"
+      },
+      "object_relationships": [
+        {
+          "name": "agency",
+          "using": {
+            "foreign_key_constraint_on": "agency_id"
+          }
+        },
+        {
+          "name": "assigned_agent",
+          "using": {
+            "foreign_key_constraint_on": "assigned_agent_id"
+          }
+        }
+      ],
+      "array_relationships": [
+        {
+          "name": "candidate_events_by_candidate_id",
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "candidate_id",
+              "table": {
+                "name": "candidate_events",
+                "schema": "public"
+              }
+            }
+          }
+        }
+      ],
+      "select_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "columns": [
+              "id",
+              "agency_id",
+              "first_name",
+              "last_name",
+              "email",
+              "phone",
+              "state",
+              "current_occupation",
+              "years_experience",
+              "why_interested",
+              "sales_experience",
+              "financial_services_experience",
+              "preferred_contact",
+              "status",
+              "score",
+              "assigned_agent_id",
+              "created_at"
+            ],
+            "filter": {
+              "agency": {
+                "agents_by_agency_id": {
+                  "user_id": {
+                    "_eq": "X-Hasura-User-Id"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "update_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "columns": [
+              "status"
+            ],
+            "filter": {
+              "agency": {
+                "agents_by_agency_id": {
+                  "user_id": {
+                    "_eq": "X-Hasura-User-Id"
+                  }
+                }
+              }
+            },
+            "check": {
+              "agency": {
+                "agents_by_agency_id": {
+                  "user_id": {
+                    "_eq": "X-Hasura-User-Id"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "table": {
+        "name": "consents",
+        "schema": "public"
+      },
+      "object_relationships": [
+        {
+          "name": "agency",
+          "using": {
+            "foreign_key_constraint_on": "agency_id"
+          }
+        },
+        {
+          "name": "lead",
+          "using": {
+            "foreign_key_constraint_on": "lead_id"
+          }
+        }
+      ],
+      "select_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "columns": [
+              "id",
+              "agency_id",
+              "lead_id",
+              "consent_type",
+              "consent_text",
+              "created_at"
+            ],
+            "filter": {
+              "agency": {
+                "agents_by_agency_id": {
+                  "user_id": {
+                    "_eq": "X-Hasura-User-Id"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "table": {
+        "name": "content_assets",
+        "schema": "public"
+      },
+      "object_relationships": [
+        {
+          "name": "agency",
+          "using": {
+            "foreign_key_constraint_on": "agency_id"
+          }
+        },
+        {
+          "name": "creator_agent",
+          "using": {
+            "foreign_key_constraint_on": "created_by"
+          }
+        },
+        {
+          "name": "reviewer_agent",
+          "using": {
+            "foreign_key_constraint_on": "reviewer"
+          }
+        }
+      ],
+      "array_relationships": [
+        {
+          "name": "content_reviews_by_content_asset_id",
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "content_asset_id",
+              "table": {
+                "name": "content_reviews",
+                "schema": "public"
+              }
+            }
+          }
+        }
+      ],
+      "select_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "columns": [
+              "id",
+              "agency_id",
+              "title",
+              "type",
+              "content",
+              "status",
+              "created_by",
+              "reviewer",
+              "approval_date",
+              "version",
+              "ai_generated",
+              "created_at",
+              "updated_at"
+            ],
+            "filter": {
+              "agency": {
+                "agents_by_agency_id": {
+                  "user_id": {
+                    "_eq": "X-Hasura-User-Id"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "table": {
+        "name": "content_reviews",
+        "schema": "public"
+      },
+      "object_relationships": [
+        {
+          "name": "agency",
+          "using": {
+            "foreign_key_constraint_on": "agency_id"
+          }
+        },
+        {
+          "name": "content_asset",
+          "using": {
+            "foreign_key_constraint_on": "content_asset_id"
+          }
+        },
+        {
+          "name": "reviewer_agent",
+          "using": {
+            "foreign_key_constraint_on": "reviewer"
+          }
+        }
+      ],
+      "select_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "columns": [
+              "id",
+              "content_asset_id",
+              "agency_id",
+              "reviewer",
+              "action",
+              "comment",
+              "created_at"
+            ],
+            "filter": {
+              "agency": {
+                "agents_by_agency_id": {
+                  "user_id": {
+                    "_eq": "X-Hasura-User-Id"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "table": {
+        "name": "lead_events",
+        "schema": "public"
+      },
+      "object_relationships": [
+        {
+          "name": "agency",
+          "using": {
+            "foreign_key_constraint_on": "agency_id"
+          }
+        },
+        {
+          "name": "lead",
+          "using": {
+            "foreign_key_constraint_on": "lead_id"
+          }
+        }
+      ],
+      "select_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "columns": [
+              "id",
+              "lead_id",
+              "agency_id",
+              "event_type",
+              "description",
+              "metadata",
+              "created_at"
+            ],
+            "filter": {
+              "agency": {
+                "agents_by_agency_id": {
+                  "user_id": {
+                    "_eq": "X-Hasura-User-Id"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "table": {
+        "name": "leads",
+        "schema": "public"
+      },
+      "object_relationships": [
+        {
+          "name": "agency",
+          "using": {
+            "foreign_key_constraint_on": "agency_id"
+          }
+        },
+        {
+          "name": "assigned_agent",
+          "using": {
+            "foreign_key_constraint_on": "assigned_agent_id"
+          }
+        },
+        {
+          "name": "campaign",
+          "using": {
+            "foreign_key_constraint_on": "campaign_id"
+          }
+        }
+      ],
+      "array_relationships": [
+        {
+          "name": "appointments_by_lead_id",
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "lead_id",
+              "table": {
+                "name": "appointments",
+                "schema": "public"
+              }
+            }
+          }
+        },
+        {
+          "name": "consents_by_lead_id",
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "lead_id",
+              "table": {
+                "name": "consents",
+                "schema": "public"
+              }
+            }
+          }
+        },
+        {
+          "name": "lead_events_by_lead_id",
+          "using": {
+            "foreign_key_constraint_on": {
+              "column": "lead_id",
+              "table": {
+                "name": "lead_events",
+                "schema": "public"
+              }
+            }
+          }
+        }
+      ],
+      "select_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "columns": [
+              "id",
+              "agency_id",
+              "first_name",
+              "last_name",
+              "email",
+              "phone",
+              "source",
+              "campaign_id",
+              "utm_source",
+              "utm_medium",
+              "utm_campaign",
+              "status",
+              "score",
+              "score_tier",
+              "interest",
+              "assigned_agent_id",
+              "consent",
+              "consent_method",
+              "preferred_contact",
+              "checkup_responses",
+              "ai_summary",
+              "notes",
+              "last_activity",
+              "created_at"
+            ],
+            "filter": {
+              "agency": {
+                "agents_by_agency_id": {
+                  "user_id": {
+                    "_eq": "X-Hasura-User-Id"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "update_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "columns": [
+              "status",
+              "notes"
+            ],
+            "filter": {
+              "agency": {
+                "agents_by_agency_id": {
+                  "user_id": {
+                    "_eq": "X-Hasura-User-Id"
+                  }
+                }
+              }
+            },
+            "check": {
+              "agency": {
+                "agents_by_agency_id": {
+                  "user_id": {
+                    "_eq": "X-Hasura-User-Id"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "table": {
+        "name": "settings",
+        "schema": "public"
+      },
+      "object_relationships": [
+        {
+          "name": "agency",
+          "using": {
+            "foreign_key_constraint_on": "agency_id"
+          }
+        }
+      ],
+      "select_permissions": [
+        {
+          "role": "user",
+          "permission": {
+            "columns": [
+              "id",
+              "agency_id",
+              "key",
+              "value",
+              "created_at",
+              "updated_at"
+            ],
+            "filter": {
+              "agency": {
+                "agents_by_agency_id": {
+                  "user_id": {
+                    "_eq": "X-Hasura-User-Id"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
